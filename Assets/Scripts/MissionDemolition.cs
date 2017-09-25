@@ -92,11 +92,11 @@ public class MissionDemolition : MonoBehaviour {
     }
 
     void OnGUI () {
-        //draw the gui button for view switching at the top of the screen
+        //draw the ui button for view switching at the top of the screen
         Rect buttonRect = new Rect((Screen.width / 2) - 50, 10, 100, 24);
 
         switch(showing) {
-            case "Slingshots":
+            case "Slingshot":
                 if(GUI.Button(buttonRect, "Show Castle")) {
                     SwitchView("Castle");
                 }
