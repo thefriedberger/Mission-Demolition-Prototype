@@ -26,7 +26,7 @@ public class ProjectileLine : MonoBehaviour {
         }
         set {
             _poi = value;
-            if (_poi != value) {
+            if (_poi != null) {
                 //when _poi is set to somethin new, it resets everything
                 line.enabled = false;
                 points = new List<Vector3>();
