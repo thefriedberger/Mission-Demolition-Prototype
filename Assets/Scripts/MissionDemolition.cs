@@ -24,6 +24,7 @@ public class MissionDemolition : MonoBehaviour {
     public GameObject castle;
     public GameMode mode = GameMode.idle;
     public string showing = "Slingshot";
+    public float timeRemaining = 0.0f;
 
 	// Use this for initialization
 	void Start () {
@@ -85,6 +86,11 @@ public class MissionDemolition : MonoBehaviour {
             if (poi.GetComponent<Rigidbody>().IsSleeping()) {
                 SwitchView("Slingshot");
             }
+            timeRemaining -= Time.deltaTime;
+            if (timeRemaining < 0) {
+                SwitchView("Slingshot");
+                ProjectileLine.S.Clear();
+            }
         }
 	}
 
@@ -138,5 +144,6 @@ public class MissionDemolition : MonoBehaviour {
 
     public static void ShotFired() {
         S.shotsTaken++;
+        S.timeRemaining = 7.0f;
     }
 }
