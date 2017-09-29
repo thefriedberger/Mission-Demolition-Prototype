@@ -27,7 +27,7 @@ public class FollowCam : MonoBehaviour {
             //get the position of poi
             destination = poi.transform.position;
             //if poi is a projectile, check to see if it's at rest
-            if (poi.tag == "projectile") {
+            if (poi.tag == "Projectile") {
                 if (poi.GetComponent<Rigidbody>().IsSleeping()) {
                     //return default view
                     poi = null;
