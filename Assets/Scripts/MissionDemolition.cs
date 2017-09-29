@@ -80,6 +80,11 @@ public class MissionDemolition : MonoBehaviour {
             SwitchView("Both");
             //start next level in 2 seconds
             Invoke("NextLevel", 2f);
+        } else if (FollowCam.S.poi != null) {
+            GameObject poi = FollowCam.S.poi;
+            if (poi.GetComponent<Rigidbody>().IsSleeping()) {
+                SwitchView("Slingshot");
+            }
         }
 	}
 
