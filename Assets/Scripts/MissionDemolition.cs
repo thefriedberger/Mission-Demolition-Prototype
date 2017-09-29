@@ -89,7 +89,7 @@ public class MissionDemolition : MonoBehaviour {
             timeRemaining -= Time.deltaTime;
             if (timeRemaining < 0) {
                 SwitchView("Slingshot");
-                ProjectileLine.S.Clear();
+                ProjectileLine.S.poi = null;
             }
         }
 	}
